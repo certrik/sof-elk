@@ -1,0 +1,13 @@
+"attributes": {
+    "fieldAttrs": "{}",
+    "timeFieldName": "@timestamp",
+    "title": "artifact_*"
+  },
+  "coreMigrationVersion": "7.15.0",
+  "id": "artifact",
+  "namespaces": [
+    "default"
+  ],
+  "references": [],
+  "type": "index-pattern"
+}
