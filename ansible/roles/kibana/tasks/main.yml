@@ -23,11 +23,17 @@
   notify: restart firewalld
   tags: sof-elk_kibana
 
+- name: Create private key (RSA, 4096 bits)
+  community.crypto.openssl_privatekey:
+    path: /usr/local/sof-elk/kibana/config/certs/kibana.key
+  tags: sof-elk_kibana
+
 - name: Create simple self-signed certificate
   community.crypto.x509_certificate:
     path: /usr/local/sof-elk/kibana/config/certs/kibana.crt
     privatekey_path: /usr/local/sof-elk/kibana/config/certs/kibana.key
     provider: selfsigned
+  tags: sof_elk_kibana
 
 - name: Enable and start Kibana service
   systemd:
